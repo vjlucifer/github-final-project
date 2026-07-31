@@ -25,4 +25,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run python script
+        env:
+          SMTP_SERVER: 'smtp.gmail.com'
+          SMTP_PORT: '587'
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: python /GA_Test.py
